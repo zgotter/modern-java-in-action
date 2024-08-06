@@ -1,6 +1,8 @@
 package main.java.modern_java_in_action.ch02;
 
 
+import main.java.modern_java_in_action.ch02.Color;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

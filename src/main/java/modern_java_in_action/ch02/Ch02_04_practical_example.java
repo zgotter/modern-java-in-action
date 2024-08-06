@@ -1,7 +1,6 @@
 package main.java.modern_java_in_action.ch02;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 
 public class Ch02_04_practical_example {
