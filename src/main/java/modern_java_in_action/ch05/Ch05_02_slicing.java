@@ -1,5 +1,6 @@
 package main.java.modern_java_in_action.ch05;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static java.util.stream.Collectors.toList;
@@ -44,5 +45,25 @@ public class Ch05_02_slicing {
                 .limit(2)
                 .collect(toList());
         System.out.println(meet2);
+
+
+        List<Dish> specialMenu2 = Arrays.asList(
+                new Dish("season fruit", true, 120, Dish.Type.OTHER),
+                new Dish("chicken", false, 400, Dish.Type.MEAT),
+                new Dish("prawns", false, 300, Dish.Type.FISH),
+                new Dish("rice", true, 350, Dish.Type.OTHER),
+                new Dish("french fries", true, 530, Dish.Type.OTHER)
+        );
+
+        System.out.println("-----------");
+        List<Dish> filteredMenu2 = specialMenu2.stream()
+                .filter(d -> d.getCalories() < 320)
+                .collect(toList());
+        System.out.println(filteredMenu2);
+
+        List<Dish> slicedMenu12 = specialMenu2.stream()
+                .takeWhile(dish -> dish.getCalories() < 320)
+                .collect(toList());
+        System.out.println(slicedMenu12);
     }
 }
