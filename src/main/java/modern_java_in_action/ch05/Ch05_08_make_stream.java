@@ -23,10 +23,10 @@ public class Ch05_08_make_stream {
 
         Stream<String> homeValueStream = homeValue == null ? Stream.empty() : Stream.of(homeValue);
 
-        Stream<String> homeValueStream2 = Stream.ofNullable(System.getProperty("home"));
+//        Stream<String> homeValueStream2 = Stream.ofNullable(System.getProperty("home"));
 
-        Stream<String> values = Stream.of("config", "home", "user")
-                .flatMap(key -> Stream.ofNullable(System.getProperty(key)));
+//        Stream<String> values = Stream.of("config", "home", "user")
+//                .flatMap(key -> Stream.ofNullable(System.getProperty(key)));
 
         // 5.8.3
         int[] numbers = {2, 3, 5, 7, 11, 13};
@@ -64,16 +64,16 @@ public class Ch05_08_make_stream {
                 .forEach(System.out::println);
 
         // iterate with predicate
-        IntStream.iterate(0, n -> n < 100, n -> n + 4)
-                .forEach(System.out::println);
+//        IntStream.iterate(0, n -> n < 100, n -> n + 4)
+//                .forEach(System.out::println);
 
 //        IntStream.iterate(0, n -> n + 4)
 //                .filter(n -> n < 100)
 //                .forEach(System.out::println);
 
-        IntStream.iterate(0, n -> n + 4)
-                .takeWhile(n -> n < 100)
-                .forEach(System.out::println);
+//        IntStream.iterate(0, n -> n + 4)
+//                .takeWhile(n -> n < 100)
+//                .forEach(System.out::println);
 
         // generate
         Stream.generate(Math::random)
